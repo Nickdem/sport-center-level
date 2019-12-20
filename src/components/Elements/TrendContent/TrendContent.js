@@ -7,7 +7,7 @@ const TrendContent = props => {
   return (
     <div className={classes.TrendContent}>
       <TrendText textName={props.textName} textPar={props.textPar} />
-      <TrendDecor backHandler={props.clickBackHandler} moveHandler={props.clickMoveHandler}/>
+      <TrendDecor backDis={props.backDisabled} moveDis={props.moveDisabled} backHandler={props.clickBackHandler} moveHandler={props.clickMoveHandler}/>
     </div>
   )
 }

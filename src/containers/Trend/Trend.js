@@ -5,6 +5,8 @@ import TrendContent from '../../components/Elements/TrendContent/TrendContent'
 class Trend extends Component {
   state = {
     activeDiv: 0,
+    backDisabled: false,
+    moveDisabled: false,
     trend: [
       {textName: 'Сделайте свой выбор!', textPar: 'Здесь вы можете найти множество видов спорта. У нас их очень много! Мы предлагаем посетить бесплатное вводное занятие, чтобы узнать, почему так много людей занимаются спортом и придерживаются здорового образа жизни.'},
       {textName: 'Cкоростно-силовые', textPar: 'В данном направлении главным качеством является проявление взрывной, короткой по времени и очень интенсивной физической деятельности. Сюда включены: легкоатлетические виды спорта, метание, спринтерские номера программы в различных видах спорта.'},
@@ -17,20 +19,26 @@ class Trend extends Component {
 
   onClickMoveHandler = indx => {
     if (this.endOfLenght()) {
-      console.log('Finished')
+      this.setState({
+         moveDisabled: true
+      })
     } else {
       this.setState({
-        activeDiv: this.state.activeDiv + 1
+        activeDiv: this.state.activeDiv + 1,
+        backDisabled: false
       })
     }
   }
 
   onClickBackHandler = indx => {
     if (this.startOfLength()) {
-      console.log('Restart')
+      this.setState({
+         backDisabled: true
+      })
     } else {
       this.setState({
-        activeDiv: this.state.activeDiv - 1
+        activeDiv: this.state.activeDiv - 1,
+        moveDisabled: false
       })
     }
   }
@@ -47,6 +55,8 @@ class Trend extends Component {
     return (
       <div className={classes.Trend}>
           <TrendContent
+            backDisabled={this.state.backDisabled}
+            moveDisabled={this.state.moveDisabled}
             textName={this.state.trend[this.state.activeDiv].textName}
             textPar={this.state.trend[this.state.activeDiv].textPar}
             clickMoveHandler={this.onClickMoveHandler}
