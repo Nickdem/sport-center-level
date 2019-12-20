@@ -43,38 +43,15 @@ class Trend extends Component {
     return this.state.activeDiv - 1 === -1
   }
 
- /* state = {
-    name: ' ',
-    textPar: 'Здесь вы можете найти множество видов спорта. У нас их очень много! '
-	}
-
-  clickMoveHandler = () => {
-    this.setState({
-      name: 'скоростно-силовое',
-      textPar: 'Сюда включены: легкоатлетические виды спорта, метание, спринтерские номера программы в различных видах спорта'
-    })
-  }
-
-  clickBackHandler = () => {
-    this.setState({
-      name: 'Циклическое',
-      textPar: 'Сюда включены: беговые дисциплины легкой атлетики, плавание, гребля, велоспорт, лыжный, конькобежный спорт'
-    })
-  }*/
-
   render() {
     return (
       <div className={classes.Trend}>
-
-
           <TrendContent
             textName={this.state.trend[this.state.activeDiv].textName}
             textPar={this.state.trend[this.state.activeDiv].textPar}
             clickMoveHandler={this.onClickMoveHandler}
             clickBackHandler={this.onClickBackHandler}
           />
-
-
       </div>
     )
   }

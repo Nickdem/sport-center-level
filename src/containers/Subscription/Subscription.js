@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import classes from './Subscription.module.css'
 import SubscriptionContent from '../../components/Elements/SubscriptionContent/SubscriptionContent'
+import Button from '../../components/Elements/Button/Button'
 
 class Subscription extends Component {
   state= {
@@ -19,7 +20,7 @@ class Subscription extends Component {
         <SubscriptionContent
           subscriptions={this.state.subscriptions}
         />
-        <button>Заказать абонемент</button>
+        <Button>Заказать абонемент</Button>
       </div>
     )
   }
