@@ -1,0 +1,21 @@
+.MenuToggle {
+  transition: opacity .22s ease-in;
+}
+
+.MenuToggle:hover {
+  opacity: .8;
+}
+
+.menuEx {
+  z-index: 51;
+  width: 18px;
+  height: 18px;
+  background:  url(../../../img/menu-close.png) no-repeat
+}
+
+.menuOp{
+  z-index: 50;
+  width: 24px;
+  height: 18px;
+  background:  url(../../../img/menu-open.png) no-repeat
+}

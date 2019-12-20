@@ -1,0 +1,64 @@
+.TrialLesson {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 7%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.TrialLesson h1 {
+  font-size: 48px;
+}
+
+.TrialLesson form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.TrialLesson input {
+  outline: none;
+  border: none;
+  background: rgba(207,176,249,.1);
+  border-bottom: 1px solid #fbf5f4;
+  margin-bottom: 5%;
+  color: #ffffff;
+  height: 40px;
+}
+
+.TrialLesson button {
+  margin: 5% 7%;
+  color: #ffffff;
+  padding: 20px;
+  background: #9370db;
+  border-radius: 30px;
+}
+
+@media (min-width: 768px) {
+  .TrialLesson p {
+    font-size: 24px;
+  }
+
+  .TrialLesson input {
+    font-size: 24px;
+    height: 50px;
+  }
+
+  .TrialLesson button {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .TrialLesson button {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  .TrialLesson input {
+    width: 40%;
+    margin: 0 auto 3%;
+  }
+}

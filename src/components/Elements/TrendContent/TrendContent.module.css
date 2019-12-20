@@ -1,0 +1,74 @@
+.TrendContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  color: #ffffff;
+}
+
+.TrendText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.TrendText h1 {
+  margin: 0;
+}
+
+.TrendText h2 {
+  margin: 0;
+}
+
+.TrendText p {
+  margin: 0;
+}
+
+.TrendContent button {
+  margin: 0 7%;
+  color: #ffffff;
+  padding: 20px;
+  background: #9370db;
+  border-radius: 30px;
+}
+
+@media (min-width: 768px) {
+  .TrendContent {
+    flex-direction: row;
+    font-size: 24px;
+  }
+
+  .TrendText {
+    justify-content: start;
+  }
+
+  .TrendText h2 {
+    margin: 5% 0;
+  }
+
+  .TrendDecor {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+
+  .TrendDecor button {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .TrendContent {
+    flex-direction: row-reverse;
+    font-size: 24px;
+  }
+
+  .TrendDecor {
+    flex-direction: row-reverse;
+  }
+
+  .TrendDecor button {
+    margin-top: 20%;
+  }
+}
