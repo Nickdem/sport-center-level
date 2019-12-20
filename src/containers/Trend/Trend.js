@@ -5,7 +5,7 @@ import TrendContent from '../../components/Elements/TrendContent/TrendContent'
 class Trend extends Component {
   state = {
     activeDiv: 0,
-    backDisabled: false,
+    backDisabled: true,
     moveDisabled: false,
     trend: [
       {textName: 'Сделайте свой выбор!', textPar: 'Здесь вы можете найти множество видов спорта. У нас их очень много! Мы предлагаем посетить бесплатное вводное занятие, чтобы узнать, почему так много людей занимаются спортом и придерживаются здорового образа жизни.'},
@@ -16,6 +16,7 @@ class Trend extends Component {
       {textName: 'Спортивные игры', textPar: 'Самостоятельные виды спорта, связанные с игровым противоборством команд или отдельных спортсменов, и проводящиеся по определенным правилам. Сюда включены: футбол, хоккей, волейбол и т. д.'}
     ]
   }
+
 
   onClickMoveHandler = indx => {
     if (this.endOfLenght()) {
