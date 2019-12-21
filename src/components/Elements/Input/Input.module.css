@@ -1,0 +1,32 @@
+.Input {
+  display: flex;
+  flex-direction: column;
+}
+
+.Input input {
+  outline: none;
+  border: none;
+  background: rgba(207,176,249,.1);
+  border-bottom: 1px solid #fbf5f4;
+  margin: 0 7% 5%;
+  color: #ffffff;
+  height: 40px;
+}
+
+.Input.invalid label {
+  color: #f01f30;
+}
+
+@media (min-width: 768px) {
+  .Input input {
+    font-size: 24px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .Input input {
+    width: 40%;
+    margin: 0 auto 3%;
+  }
+}

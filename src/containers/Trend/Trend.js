@@ -17,7 +17,6 @@ class Trend extends Component {
     ]
   }
 
-
   onClickMoveHandler = indx => {
     if (this.endOfLenght()) {
       this.setState({
