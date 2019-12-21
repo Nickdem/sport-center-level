@@ -11,23 +11,24 @@ class TrialLesson extends Component {
         value: '',
         type: 'text',
         label: 'Ваше имя',
-        errorMessage: 'Введите правильно имя',
+        errorMessage: 'Введите правильно имя(минимум 2 символа)',
         valid: false,
         touched: false,
         validation: {
           required: true,
+          minLength: 2
         }
       },
       tel: {
         value: '',
         type: 'text',
         label: 'Ваш номер телефона',
-        errorMessage: 'Введите корректный номер телефона',
+        errorMessage: 'Введите корректный номер телефона(минимум 6 символов)',
         valid: false,
         touched: false,
         validation: {
           required: true,
-          minLength: 11
+          minLength: 6
         }
       }
     }
@@ -41,8 +42,43 @@ class TrialLesson extends Component {
     event.preventDefault()
   }
 
+  validateControl(value, validation) {
+    if (!validation) {
+      return true
+    }
+
+    let isValid = true
+
+    if (validation.required) {
+      isValid = value.trim() !== '' && isValid
+    }
+
+    if (validation.minLength) {
+      isValid = value.length >= validation.minLength && isValid
+    }
+
+    return isValid
+  }
+
   onChangeHandler = (event, controlName) => {
-    console.log(`${controlName}: `, event.target.value)
+    const formControls = { ...this.state.formControls }
+    const control = { ...formControls[controlName] }
+
+    control.value = event.target.value
+    control.touched = true
+    control.valid = this.validateControl(control.value, control.validation)
+
+    formControls[controlName] = control
+
+    let isFormValid = true
+
+    Object.keys(formControls).forEach(name =>{
+      isFormValid = formControls[name].valid && isFormValid
+    })
+
+    this.setState({
+      formControls, isFormValid
+    })
   }
 
   renderInputs() {
@@ -71,7 +107,7 @@ class TrialLesson extends Component {
         <p>Хотите скидку на абонемент? Приведите с собой друзей и получите -10% за каждого пришедшего</p>
         <form onSubmit={this.submitHandler}>
           {this.renderInputs()}
-          <Button onClick={this.sendingHandler}>Отправить заявку</Button>
+          <Button disabled={!this.state.isFormValid} onClick={this.sendingHandler}>Отправить заявку</Button>
         </form>
       </div>
     )

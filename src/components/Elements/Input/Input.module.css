@@ -1,6 +1,7 @@
 .Input {
   display: flex;
   flex-direction: column;
+  margin: 0 7% 5%;
 }
 
 .Input input {
@@ -8,25 +9,37 @@
   border: none;
   background: rgba(207,176,249,.1);
   border-bottom: 1px solid #fbf5f4;
-  margin: 0 7% 5%;
   color: #ffffff;
-  height: 40px;
+  height: 25px;
 }
 
 .Input.invalid label {
-  color: #f01f30;
+  color: #ff0000;
+}
+
+.Input span {
+  color: #ff0000;
+  font-size: 8px;
 }
 
 @media (min-width: 768px) {
+  .Input label {
+    font-size: 24px;
+  }
   .Input input {
     font-size: 24px;
     height: 50px;
+  }
+
+  .Input span {
+    color: #ff0000;
+    font-size: 12px;
   }
 }
 
 @media (min-width: 1440px) {
   .Input input {
     width: 40%;
-    margin: 0 auto 3%;
+    margin: 0 auto;
   }
 }
