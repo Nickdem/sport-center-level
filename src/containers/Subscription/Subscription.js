@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import classes from './Subscription.module.css'
 import SubscriptionContent from '../../components/Elements/SubscriptionContent/SubscriptionContent'
+import {Link} from 'react-router-dom'
 import Button from '../../components/Elements/Button/Button'
 
 class Subscription extends Component {
@@ -20,7 +21,7 @@ class Subscription extends Component {
         <SubscriptionContent
           subscriptions={this.state.subscriptions}
         />
-        <Button>Заказать абонемент</Button>
+        <Link to="/triallesson"><Button>Заказать абонемент</Button></Link>
       </div>
     )
   }

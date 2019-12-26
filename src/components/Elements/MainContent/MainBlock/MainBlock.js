@@ -3,6 +3,7 @@ import classes from './MainBlock.module.css'
 import levelMob from '../../../../img/levelMob.png'
 import levelTab from '../../../../img/levelTab.png'
 import levelDes from '../../../../img/levelDes.png'
+import {Link} from 'react-router-dom'
 import Button from '../../Button/Button'
 
 const MainBlock = props =>{
@@ -14,7 +15,7 @@ const MainBlock = props =>{
         <img src={levelMob} alt="Изображение" />
       </picture>
       <p>Приглашаем вас и ваших друзей на бесплатное пробное занятие</p>
-      <Button>Запись</Button>
+      <Link to="/triallesson"><Button>GO</Button>Записаться</Link>
     </div>
   )
 }

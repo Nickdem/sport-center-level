@@ -1,8 +1,9 @@
 .Button {
-    color: #ffffff;
-    padding: 20px;
-    background: #9370db;
-    border-radius: 40px;
+  color: #ffffff;
+  padding: 20px;
+  background: #9370db;
+  border-radius: 40px;
+  margin: 0 10px;
 }
 
 .Button:disabled {
