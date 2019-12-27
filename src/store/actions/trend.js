@@ -11,9 +11,10 @@ export function endDisabled() {
   }
 }
 
-export function trendMoveContent(backDisabled) {
+export function trendMoveContent(number) {
   return {
-    type: TREND_MOVE_CONTENT
+    type: TREND_MOVE_CONTENT,
+    number
   }
 }
 
@@ -21,7 +22,7 @@ export function clickMoveHandler(indx) {
   return (dispatch, getState) => {
     const state = getState().trend
 
-    if (this.endOfLenght(state)) {
+    if (endOfLenght(state)) {
       dispatch(endDisabled())
     } else {
       dispatch(trendMoveContent(state.activeDiv + 1))
@@ -35,16 +36,17 @@ export function startDisabled() {
   }
 }
 
-export function trendBackContent(moveDisabled) {
+export function trendBackContent(number) {
   return {
-    type: TREND_BACK_CONTENT
+    type: TREND_BACK_CONTENT,
+    number
   }
 }
 
 export function clickBackHandler(indx) {
   return (dispatch, getState) => {
     const state = getState().trend
-    if (this.startOfLength(state)) {
+    if (startOfLength(state)) {
       dispatch(startDisabled())
     } else {
       dispatch(trendBackContent(state.activeDiv - 1))
@@ -53,9 +55,9 @@ export function clickBackHandler(indx) {
 }
 
 function endOfLenght(state) {
-  return this.state.activeDiv + 1 === this.state.trend.length
+  return state.activeDiv + 1 === state.trend.length
 }
 
 function startOfLength(state) {
-  return this.state.activeDiv - 1 === -1
+  return state.activeDiv - 1 === -1
 }

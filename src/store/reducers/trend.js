@@ -31,13 +31,13 @@ export default function trendReducer(state = initialState, action) {
       }
     case TREND_MOVE_CONTENT:
       return {
-         ...state, backDisabled: true, activeDiv: action.number
+         ...state, backDisabled: false, activeDiv: action.number
       }
     case TREND_BACK_CONTENT:
       return {
-         ...state, moveDisabled: true, activeDiv: action.number
-      }       
+         ...state, moveDisabled: false, activeDiv: action.number
+      }
     default:
-      return state  
+      return state
   }
 }

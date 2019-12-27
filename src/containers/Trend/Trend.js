@@ -13,8 +13,8 @@ class Trend extends Component {
             moveDisabled={this.props.moveDisabled}
             textName={this.props.trend[this.props.activeDiv].textName}
             textPar={this.props.trend[this.props.activeDiv].textPar}
-            clickMoveHandler={this.clickMoveHandler}
-            clickBackHandler={this.clickBackHandler}
+            clickMoveHandler={this.props.clickMoveHandler}
+            clickBackHandler={this.props.clickBackHandler}
           />
       </div>
     )
@@ -23,12 +23,12 @@ class Trend extends Component {
 
 
 function mapStateToProps(state) {
-  console.log(this.props)
+  console.log(state.trend.activeDiv)
   return {
-    activeDiv: state.activeDiv,
-    backDisabled: state.backDisabled,
-    moveDisabled: state.moveDisabled,
-    trend: state.trend
+    activeDiv: state.trend.activeDiv,
+    trend: state.trend.trend,
+    backDisabled: state.trend.backDisabled,
+    moveDisabled: state.trend.moveDisabled
   }
 }
 
