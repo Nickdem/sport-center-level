@@ -1,4 +1,23 @@
 .Trend {
   margin: 0 7%;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .Trend {
+    flex-direction: row;
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .Trend {
+    flex-direction: row-reverse;
+    font-size: 24px;
+  }
 }

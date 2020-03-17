@@ -1,15 +1,15 @@
-import React, {Component} from 'react'
+import React from 'react'
 import classes from './Main.module.css'
-import MainContent from '../../components/Elements/MainContent/MainContent'
+import MainContent from '../../components/MainContent/MainContent'
+import MainBlock from '../../components/MainBlock/MainBlock'
 
-class Main extends Component {
-  render() {
-    return (
-      <div className={classes.Main}>
-        <MainContent />
-      </div>
-    )
-  }
+const Main = () => {
+  return (
+    <div className={classes.Main}>
+      <MainContent />
+      <MainBlock />
+    </div>
+  )
 }
 
 export default Main

@@ -1,11 +1,11 @@
 import React from 'react'
 import classes from './MainBlock.module.css'
-import levelMob from '../../../../img/levelMob.png'
-import levelTab from '../../../../img/levelTab.png'
-import levelDes from '../../../../img/levelDes.png'
-import Button from '../../Button/Button'
+import levelMob from '../../img/levelMob.png'
+import levelTab from '../../img/levelTab.png'
+import levelDes from '../../img/levelDes.png'
+import Button from '../Button/Button'
 
-const MainBlock = props =>{
+const MainBlock = () =>{
   return (
     <div className={classes.MainBlock}>
       <picture>

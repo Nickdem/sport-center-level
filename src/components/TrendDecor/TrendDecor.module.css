@@ -1,0 +1,21 @@
+.TrendDecor button {
+  margin: 0 7%;
+}
+
+@media (min-width: 768px) {
+  .TrendDecor {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1440px) {
+  .TrendDecor {
+    flex-direction: row-reverse;
+  }
+
+  .TrendDecor button {
+    margin-top: 20%;
+  }
+}

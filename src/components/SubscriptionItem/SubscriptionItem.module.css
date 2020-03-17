@@ -8,6 +8,10 @@
   font-size: 18px;
 }
 
+.SubscriptionItem strong {
+  color: #9370db;
+}
+
 @media (min-width: 768px) {
   .SubscriptionItem h1 {
     font-size: 24px;

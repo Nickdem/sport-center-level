@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import classes from './Trend.module.css'
-import TrendContent from '../../components/Elements/TrendContent/TrendContent'
+import TrendText from '../../components/TrendText/TrendText'
+import TrendDecor from '../../components/TrendDecor/TrendDecor'
 
 class Trend extends Component {
   state = {
@@ -54,14 +55,8 @@ class Trend extends Component {
   render() {
     return (
       <div className={classes.Trend}>
-          <TrendContent
-            backDisabled={this.state.backDisabled}
-            moveDisabled={this.state.moveDisabled}
-            textName={this.state.trend[this.state.activeDiv].textName}
-            textPar={this.state.trend[this.state.activeDiv].textPar}
-            clickMoveHandler={this.onClickMoveHandler}
-            clickBackHandler={this.onClickBackHandler}
-          />
+                <TrendText textName={this.state.trend[this.state.activeDiv].textName} textPar={this.state.trend[this.state.activeDiv].textPar} />
+                <TrendDecor backDis={this.state.backDisabled} moveDis={this.state.moveDisabled} backHandler={this.onClickBackHandler} moveHandler={this.onClickMoveHandler}/>
       </div>
     )
   }

@@ -1,0 +1,11 @@
+@media (min-width: 768px) {
+  .MainImg {
+    margin: auto 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .MainImg {
+    flex-grow: 1;
+  }
+}
