@@ -1,13 +1,13 @@
 import React from 'react'
 import classes from './TrendText.module.css'
 
-const TrendText = props => {
+const TrendText = ({trend}) => {
   return (
     <div className={classes.TrendText}>
       <h1>Направление -</h1>
-      <h2>{props.textName}</h2>
-      <p>{props.textPar}</p>
-    </div>      
+      <h2>{trend.textName}</h2>
+      <p>{trend.textPar}</p>
+    </div>
   )
 }
 
