@@ -1,12 +1,10 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 import classes from './TrialLesson.module.css'
 import Button from '../../components/Button/Button'
 import Input from '../../components/Input/Input'
 
-class TrialLesson extends Component {
-  state = {
-    isFormValid: false,
-    formControls: {
+const TrialLesson = () => {
+  const formControls = {
       name: {
         value: '',
         type: 'text',
@@ -32,17 +30,11 @@ class TrialLesson extends Component {
         }
       }
     }
-  }
 
-  sendingHandler = () => {
+  const [controls, setControls] = useState(formControls)
+  const [valid, setValid] = useState(false)
 
-  }
-
-  submitHandler = event => {
-    event.preventDefault()
-  }
-
-  validateControl(value, validation) {
+  const validateControl = (value, validation) => {
     if (!validation) {
       return true
     }
@@ -60,13 +52,13 @@ class TrialLesson extends Component {
     return isValid
   }
 
-  onChangeHandler = (event, controlName) => {
-    const formControls = { ...this.state.formControls }
+  const onChangeHandler = (event, controlName) => {
+    const formControls = { ...controls }
     const control = { ...formControls[controlName] }
 
     control.value = event.target.value
     control.touched = true
-    control.valid = this.validateControl(control.value, control.validation)
+    control.valid = validateControl(control.value, control.validation)
 
     formControls[controlName] = control
 
@@ -76,42 +68,46 @@ class TrialLesson extends Component {
       isFormValid = formControls[name].valid && isFormValid
     })
 
-    this.setState({
-      formControls, isFormValid
-    })
+    setControls(formControls)
+    setValid(isFormValid)
   }
 
-  renderInputs() {
-    return Object.keys(this.state.formControls).map((controlName, index) => {
-      const control = this.state.formControls[controlName]
-      return (
-        <Input
-          key={controlName + index}
-          type={control.type}
-          value={control.value}
-          valid={control.valid}
-          touched={control.touched}
-          label={control.label}
-          shouldValidate={!!control.validation}
-          errorMessage={control.errorMessage}
-          onChange={event => this.onChangeHandler(event, controlName)}
-        />
-      )
-    })
-  }
-
-  render() {
+  const renderInputs = Object.keys(controls).map((controlName, index) => {
+    const control = controls[controlName]
     return (
-      <div className={classes.TrialLesson}>
-        <h1>10% скидка на абонемент</h1>
-        <p>Хотите скидку на абонемент? Приведите с собой друзей и получите -10% за каждого пришедшего</p>
-        <form onSubmit={this.submitHandler}>
-          {this.renderInputs()}
-          <Button disabled={!this.state.isFormValid} onClick={this.sendingHandler}>Отправить заявку</Button>
-        </form>
-      </div>
+      <Input
+        key={controlName + index}
+        type={control.type}
+        value={control.value}
+        valid={control.valid}
+        touched={control.touched}
+        label={control.label}
+        shouldValidate={!!control.validation}
+        errorMessage={control.errorMessage}
+        onChange={event => onChangeHandler(event, controlName)}
+      />
     )
+  })
+
+
+  const sendingHandler = () => {
+
   }
+
+  const submitHandler = event => {
+    event.preventDefault()
+  }
+
+  return (
+    <div className={classes.TrialLesson}>
+      <h1>10% скидка на абонемент</h1>
+      <p>Хотите скидку на абонемент? Приведите с собой друзей и получите -10% за каждого пришедшего</p>
+      <form onSubmit={submitHandler}>
+        {renderInputs}
+        <Button disabled={!valid} onClick={sendingHandler}>Отправить заявку</Button>
+      </form>
+    </div>
+  )
 }
 
 export default TrialLesson
