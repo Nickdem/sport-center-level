@@ -26,6 +26,7 @@ const Trend = () => {
       setBack(false)
       setMove(false)
     }
+    // eslint-disable-next-line
   }, [count])
 
   return (

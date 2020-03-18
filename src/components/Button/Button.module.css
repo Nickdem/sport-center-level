@@ -3,6 +3,18 @@
     padding: 20px;
     background: #9370db;
     border-radius: 40px;
+    cursor: pointer;
+}
+
+.Button:hover,
+.Button:focus {
+  color: #d3d3d3;
+  background: #8a2be2;
+}
+
+.Button:active {
+  color: #a9a9a9;
+  background: #6a5acd;
 }
 
 .Button:disabled {

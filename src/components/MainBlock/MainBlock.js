@@ -4,6 +4,7 @@ import levelMob from '../../img/levelMob.png'
 import levelTab from '../../img/levelTab.png'
 import levelDes from '../../img/levelDes.png'
 import Button from '../Button/Button'
+import {Link} from 'react-router-dom'
 
 const MainBlock = () =>{
   return (
@@ -14,7 +15,7 @@ const MainBlock = () =>{
         <img src={levelMob} alt="Изображение" />
       </picture>
       <p>Приглашаем вас и ваших друзей на бесплатное пробное занятие</p>
-      <Button>Запись</Button>
+      <Link to='/triallesson'><Button>Запись</Button></Link>
     </div>
   )
 }

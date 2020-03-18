@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './Subscription.module.css'
 import SubscriptionItem from '../../components/SubscriptionItem/SubscriptionItem'
 import Button from '../../components/Button/Button'
+import {Link} from 'react-router-dom'
 
 const Subscription = () => {
   const subscriptions = [
@@ -22,7 +23,7 @@ const Subscription = () => {
         )}
       )}
       </div>
-      <Button>Заказать абонемент</Button>
+      <Link to='/triallesson'><Button>Заказать абонемент</Button></Link>
     </div>
   )
 
