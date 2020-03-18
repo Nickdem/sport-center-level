@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './Subscription.module.css'
 import SubscriptionItem from '../../components/SubscriptionItem/SubscriptionItem'
-import Button from '../../components/Elements/Button/Button'
+import Button from '../../components/Button/Button'
 
 const Subscription = () => {
   const subscriptions = [

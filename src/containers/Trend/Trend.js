@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import classes from './Trend.module.css'
 import TrendText from '../../components/TrendText/TrendText'
 import TrendDecor from '../../components/TrendDecor/TrendDecor'
@@ -15,40 +15,25 @@ const Trend = () => {
 
   const [move, setMove] = useState(false)
   const [count, setCount] = useState(0)
-  const [back, setBack] = useState(true)
+  const [back, setBack] = useState(false)
 
-  const onClickMoveHandler = indx => {
-    if (endOfLenght()) {
-      setMove(true)
-    } else {
-      setCount(count + 1)
-      setBack(false)
-    }
-  }
-
- const onClickBackHandler = indx => {
-    if (startOfLength()) {
+  useEffect(() =>{
+    if(count === 0){
       setBack(true)
-    } else {
-      setCount(count - 1)
+    }else if(count + 1 === objTrend.length){
+      setMove(true)
+    }else{
+      setBack(false)
       setMove(false)
     }
-  }
+  }, [count])
 
- const endOfLenght = () => {
-    return count + 1 === objTrend.length
-  }
-
- const startOfLength= () => {
-    return count - 1 === -1
-  }
-
-    return (
-      <div className={classes.Trend}>
-        <TrendText trend = {objTrend[count]} />
-        <TrendDecor backDis={back} moveDis={move} backHandler={onClickBackHandler} moveHandler={onClickMoveHandler}/>
-      </div>
-    )
+  return (
+    <div className={classes.Trend}>
+      <TrendText trend = {objTrend[count]} />
+      <TrendDecor back={back} move={move} backHandler={()=>setCount(count - 1)} moveHandler={()=> setCount(count + 1)}/>
+    </div>
+  )
 }
 
 export default Trend

@@ -5,7 +5,7 @@ import trendTab from '../../img/trendTab.png'
 import trendDes from '../../img/trendDes.png'
 import Button from '../Button/Button'
 
-const TrendDecor = props => {
+const TrendDecor = ({backHandler, moveHandler, back, move}) => {
   return (
     <div className={classes.TrendDecor}>
       <picture>
@@ -14,8 +14,8 @@ const TrendDecor = props => {
         <img src={trendMob} alt="Изображение" />
       </picture>
       <div>
-        <Button onClick={props.backHandler} disabled={props.backDis}>назад</Button>
-        <Button onClick={props.moveHandler} disabled={props.moveDis}>вперед</Button>
+        <Button onClick={backHandler} disabled={back}>назад</Button>
+        <Button onClick={moveHandler} disabled={move}>вперед</Button>
       </div>
     </div>
   )

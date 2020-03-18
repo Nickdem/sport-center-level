@@ -1,12 +1,12 @@
 import React from 'react'
 import classes from './MenuToggle.module.css'
 
-const MenuToggle = props => {
+const MenuToggle = ({onToggle, isOpen}) => {
   const cls = [
     classes.MenuToggle
   ]
 
-  if (props.isOpen) {
+  if (isOpen) {
     cls.push(classes.menuEx)
   } else {
     cls.push(classes.menuOp)
@@ -16,7 +16,7 @@ const MenuToggle = props => {
   return (
     <div
       className={cls.join(' ')}
-      onClick={props.onToggle}
+      onClick={onToggle}
     />
   )
 }

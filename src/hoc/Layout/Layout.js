@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import classes from './Layout.module.css'
-import Header from '../../components/Elements/Header/Header'
-import Footer from '../../components/Elements/Footer/Footer'
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 
 class Layout extends Component {
 	render() {

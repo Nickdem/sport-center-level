@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import classes from './TrialLesson.module.css'
-import Button from '../../components/Elements/Button/Button'
-import Input from '../../components/Elements/Input/Input'
+import Button from '../../components/Button/Button'
+import Input from '../../components/Input/Input'
 
 class TrialLesson extends Component {
   state = {
