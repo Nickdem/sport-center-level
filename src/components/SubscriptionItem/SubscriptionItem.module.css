@@ -2,6 +2,7 @@
   background: #ffffff;
   border-radius: 10px;
   margin: 0 10%;
+  box-shadow: 0 0 5px #000;
 }
 
 .SubscriptionItem h1 {

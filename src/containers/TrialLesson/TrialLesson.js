@@ -90,12 +90,9 @@ const TrialLesson = () => {
   })
 
 
-  const sendingHandler = () => {
-
-  }
-
   const submitHandler = event => {
     event.preventDefault()
+    console.log( `Вы успешно отправили форму: Имя - ${controls.name.value}, Телефон - ${controls.tel.value}`)
   }
 
   return (
@@ -104,7 +101,7 @@ const TrialLesson = () => {
       <p>Хотите скидку на абонемент? Приведите с собой друзей и получите -10% за каждого пришедшего</p>
       <form onSubmit={submitHandler}>
         {renderInputs}
-        <Button disabled={!valid} onClick={sendingHandler}>Отправить заявку</Button>
+        <Button disabled={!valid} type="submit">Отправить заявку</Button>
       </form>
     </div>
   )
